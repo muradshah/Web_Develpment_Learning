@@ -1,6 +1,9 @@
 const express = require("express");
+const bodyParser = require("body-parser");
+
 const app = express();
 const port = 3000;
+//app.use("view-engine", "ejs");
 
 app.get("/", (req, res) => {
 	var today = new Date();
@@ -9,7 +12,7 @@ app.get("/", (req, res) => {
 		res.sendFile(__dirname + "/index.html");
 		//res.send("yay its Weekday");
 	} else {
-		res.send("booo! i have to work");
+		res.sendFile(__dirname + "/index.html");
 	}
 	//res.send("This is homepage");
 });
